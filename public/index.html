@@ -1,0 +1,30 @@
+<form>
+Arabic version: <input type="text" id="arabic" onkeyup="convertToRoman();"><br>
+Roman: <input type="text" id="roman"><br>
+</form>
+
+<script src="/static/js/qwest.min.js">
+</script>
+<script>
+
+var send = function(arabic){
+   qwest.post('/toroman', {
+        arabic: arabic
+     })
+     .then(function(xhr, response) {
+		updateResponse(response.roman);
+     })
+     .catch(function(e, xhr, response) {
+		updateResponse("ERROR");
+     }); 
+};
+
+var updateResponse = function(text){
+	document.getElementById("roman").value = text;	
+}
+
+function convertToRoman(){
+    var arabic = document.getElementById("arabic").value;
+    send(arabic); 
+}
+</script>
