@@ -6,8 +6,8 @@ var romanNumeralConverter = require('./../src/converter');
 
 var app = romanNumeralAPI.app(romanNumeralConverter);
 
-describe('Roman Numeral', function() {
-  it('should return the roman numeral equivalent', function(done) {
+describe('Roman Numeral API', function() {
+  it('should ask the roman numeral conversor', function(done) {
     request(app)
       .post('/toroman')
       .send({'arabic': 1})
