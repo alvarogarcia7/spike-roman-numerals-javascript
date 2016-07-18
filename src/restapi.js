@@ -6,10 +6,18 @@ var self = this;
 app.use(bodyParser.json());
 
 app.post('/toroman', function(req, res) {
-    console.log(req.body);
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ 'roman': self.converter(req.body.arabic) }));
+  var roman = self.converter(req.body.arabic);
+  setHeaders(res);
+  send(res, {'roman': roman});
 });
+
+var setHeaders = function(res){
+  res.setHeader('Content-Type', 'application/json');
+}
+
+var send = function(res, payload){
+  res.send(JSON.stringify(payload));
+}
 
 module.exports = {app: function(converter){
     self.converter = converter;
