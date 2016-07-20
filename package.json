@@ -2,11 +2,14 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "qwest": "^4.4.4"
+    "qwest": "^4.4.4",
+    "radio": "^0.2.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "must": "^0.13.1",
     "should": "^10.0.0",
+    "sinon": "^1.17.4",
     "supertest": "^1.2.0"
   }
 }

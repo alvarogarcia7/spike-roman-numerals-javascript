@@ -1,15 +1,15 @@
 <form>
-Arabic version: <input type="text" id="arabic" onkeyup="convertToRoman();"><br>
+Arabic version: <input type="text" id="arabic" onkeyup="arabicNumberEvent();"><br>
 Roman: <input type="text" id="roman"><br>
 </form>
 
-<script src="/static/js/qwest.min.js">
-</script>
+<script src="/static/js/qwest.min.js"></script>
+<script src="/static/js/radio.min.js"></script>
 <script>
 
 var send = function(arabic){
    qwest.post('/toroman', {
-        arabic: arabic
+        arabic: arabic,
      })
      .then(function(xhr, response) {
 		updateResponse(response.roman);
@@ -21,6 +21,10 @@ var send = function(arabic){
 
 var updateResponse = function(text){
 	document.getElementById("roman").value = text;	
+}
+
+function arabicNumberEvent() {
+    bus.send({type: 'arabic'})
 }
 
 function convertToRoman(){

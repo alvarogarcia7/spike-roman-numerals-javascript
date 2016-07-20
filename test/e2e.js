@@ -1,6 +1,5 @@
 var chai = require('chai');
 var request = require('supertest');
-var expect = chai.expect; 
 var romanNumeralAPI = require('./../src/restapi');
 var romanNumeralConverter = require('./../src/converter');
 
