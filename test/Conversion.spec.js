@@ -48,8 +48,6 @@ describe("ViewModel", function () {
       bus.publish(events.arabicEntered);
     
       demand(conversionView.setRoman.calledWith(roman)).must.be.true();
-  
-      conversor.convertToRoman.restore();
     });
   })
 });
