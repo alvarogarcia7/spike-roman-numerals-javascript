@@ -6,6 +6,7 @@ var Conversion = require('./../src/conversion');
 var Bus = require('./../src/bus');
 var Conversor = require('./../src/conversor');
 var ConversionView = require('./../src/conversionView');
+var Request = require('./../src/request');
 var events = require('./../src/events');
 var sinon = require('sinon');
 
@@ -16,7 +17,7 @@ describe("ViewModel", function () {
   var bus;
   
   beforeEach(function () {
-    conversor = Conversor();
+    conversor = Conversor(Request());
     conversionView = ConversionView();
     bus = Bus();
     Conversion(conversionView, bus, conversor, events);
