@@ -6,7 +6,6 @@
     "radio": "^0.2.0",
     "request": "^2.73.0",
     "request-promise": "^4.0.2",
-    "requestify": "^0.1.17"
   },
   "devDependencies": {
     "chai": "^3.5.0",
