@@ -21,8 +21,6 @@ describe("Conversor", function () {
     var arabic = 'anything';
     nock('http://localhost').persist().post('/toroman').reply(200, {'roman': 'I'});
     conversor.convertToRoman(arabic)
-      .then(function (roman) {
-        demand(roman).must.be('I');
-      }).then(done);
+      .then((roman) => demand(roman).must.be('I')).then(done);
   });
 });
