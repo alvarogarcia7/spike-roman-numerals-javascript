@@ -5,8 +5,8 @@ var sinon = require('sinon');
 
 var demand = require("must");
 var nock = require("nock");
-var Conversor = require('./../src/conversor');
-var Request = require('./../src/request');
+var Conversor = require('./../../src/conversor');
+var Request = require('./../../src/request');
 
 
 describe("Conversor", function () {

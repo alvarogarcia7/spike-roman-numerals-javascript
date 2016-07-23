@@ -2,12 +2,12 @@
 
 var chai = require('chai');
 var demand = require("must");
-var Conversion = require('./../src/conversion');
-var Bus = require('./../src/bus');
-var Conversor = require('./../src/conversor');
-var ConversionView = require('./../src/conversionView');
-var Request = require('./../src/request');
-var events = require('./../src/events');
+var Conversion = require('./../../src/conversion');
+var Bus = require('./../../src/bus');
+var Conversor = require('./../../src/conversor');
+var ConversionView = require('./../../src/conversionView');
+var Request = require('./../../src/request');
+var events = require('./../../src/events');
 var sinon = require('sinon');
 
 
