@@ -8,5 +8,6 @@ describe('Roman Numeral conversion', function () {
     it('1', () => toRoman(1).should.equal('I'));
     it('5', () => toRoman(5).should.equal('V'));
     it('10', () => toRoman(10).should.equal('X'));
+    it('2', () => toRoman(2).should.equal('II'));
   })
 });
