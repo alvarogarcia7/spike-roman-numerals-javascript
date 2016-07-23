@@ -18,7 +18,7 @@ describe("Conversor", function () {
   });
   
   it("converts to roman", function (done) {
-    var arabic = '10';
+    var arabic = '1';
     nock('http://localhost').persist().post('/toroman').reply(200, {'roman': 'I'});
     conversor.convertToRoman(arabic)
       .then(function (response) {
