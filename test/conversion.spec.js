@@ -20,7 +20,9 @@ describe("ViewModel", function () {
     conversor = Conversor(
       {
         post: function () {
-          return new Promise(() => {return {roman:'I'}});
+          return new Promise(() => {
+            return {roman: 'I'}
+          });
         }
       });
     conversionView = ConversionView();
@@ -38,11 +40,11 @@ describe("ViewModel", function () {
       var arabic = '1';
       sinon.spy(conversor, 'convertToRoman');
       sinon.stub(conversionView, 'getArabic').returns(arabic);
-    
+      
       bus.publish(events.arabicEntered);
-    
+      
       demand(conversor.convertToRoman.calledWith(arabic)).must.be.true();
-  
+      
       conversionView.getArabic.restore();
     });
     
@@ -50,9 +52,9 @@ describe("ViewModel", function () {
       var roman = 'I';
       sinon.stub(conversor, 'convertToRoman').returns(roman);
       sinon.spy(conversionView, 'setRoman');
-    
+      
       bus.publish(events.arabicEntered);
-    
+      
       demand(conversionView.setRoman.calledWith(roman)).must.be.true();
     });
   })
