@@ -20,11 +20,7 @@ describe("ViewModel", function () {
     conversor = Conversor(
       {
         post: function () {
-          return new Promise(function(){
-            return {
-              'roman': 'I'
-            }
-          })
+          return new Promise(() => {return {roman:'I'}});
         }
       });
     conversionView = ConversionView();
