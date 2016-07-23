@@ -17,7 +17,16 @@ describe("ViewModel", function () {
   var bus;
   
   beforeEach(function () {
-    conversor = Conversor(Request());
+    conversor = Conversor(
+      {
+        post: function () {
+          return new Promise(function(){
+            return {
+              'roman': 'I'
+            }
+          })
+        }
+      });
     conversionView = ConversionView();
     bus = Bus();
     Conversion(conversionView, bus, conversor, events);
