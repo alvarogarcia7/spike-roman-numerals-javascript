@@ -22,9 +22,10 @@ describe("Conversor", function () {
     nock('http://localhost').persist().post('/toroman').reply(200, {'roman': 'I'});
     conversor.convertToRoman(arabic)
       .then(function (response) {
-        var roman = response.roman;
-        demand(roman).must.be('I');
-        done();
-      });
+        return response.roman;
+      }).then(function (roman) {
+      demand(roman).must.be('I');
+      done();
+    });
   });
 });
