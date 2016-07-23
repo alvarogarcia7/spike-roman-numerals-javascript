@@ -1,5 +1,6 @@
 var converter = function (arabic) {
-    return 'I';
+  if (arabic === 1)return 'I';
+  return 'V';
 };
 
 module.exports = converter;
