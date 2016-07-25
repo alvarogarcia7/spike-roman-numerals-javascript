@@ -1,6 +1,6 @@
 "use strict";
 
-var arabicToRoman = {
+var obj = {
   5: 'V',
   1: 'I',
   4: 'IV',
@@ -38,13 +38,18 @@ var converter = function (arabic) {
 };
 
 function sortTranslation() {
-  var values = Object.getOwnPropertyNames(arabicToRoman).sort((a, b) => {
-    return Number.parseInt(b) - Number.parseInt(a);
-  });
+  function sortDescending(obj) {
+    var values = Object.getOwnPropertyNames(obj).sort((a, b) => {
+      return Number.parseInt(b) - Number.parseInt(a);
+    });
+    return values;
+  }
+  
+  var values = sortDescending(obj);
   
   var tuples = [];
   values.forEach(function (value) {
-    tuples.push({arabic: value, roman: arabicToRoman[value]});
+    tuples.push({arabic: value, roman: obj[value]});
   });
   
   return tuples;
