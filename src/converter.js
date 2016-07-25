@@ -39,10 +39,9 @@ var converter = function (arabic) {
 
 function sortTranslation() {
   function sortDescending(obj) {
-    var values = Object.getOwnPropertyNames(obj).sort((a, b) => {
+    return Object.getOwnPropertyNames(obj).sort((a, b) => {
       return Number.parseInt(b) - Number.parseInt(a);
     });
-    return values;
   }
   
   var values = sortDescending(obj);
