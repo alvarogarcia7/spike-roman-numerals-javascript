@@ -19,7 +19,7 @@ describe("Conversor", function () {
   
   it("converts to roman", function (done) {
     var arabic = '1';
-    nock('http://localhost').persist().post('/toroman', {'arabic': '1'}).reply(200, {'roman': 'I'});
+    nock('http://localhost').persist().post('/toroman', {'arabic': arabic}).reply(200, {'roman': 'I'});
     conversor.convertToRoman(arabic)
       .then((roman) => demand(roman).must.be('I'))
       .then(done);
