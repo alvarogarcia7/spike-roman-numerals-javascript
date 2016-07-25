@@ -42,13 +42,12 @@ function sortTranslation() {
     return Number.parseInt(b) - Number.parseInt(a);
   });
   
-  var vals = [];
+  var tuples = [];
   values.forEach(function (value) {
-    vals.push({arabic: value, roman: arabicToRoman[value]});
+    tuples.push({arabic: value, roman: arabicToRoman[value]});
   });
   
-  values = vals;
-  return values;
+  return tuples;
 }
 
 function notFinished(remaining) {
