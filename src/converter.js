@@ -20,6 +20,23 @@ var arabicToRoman = {
   1000: 'M',
 };
 
+var converter = function (arabic) {
+  var values = sortTranslation();
+  
+  var roman = '';
+  var remaining = arabic;
+  var i = 0;
+  while (notFinished(remaining)) {
+    while (fitsIn(remaining, values[i])) {
+      roman += values[i].roman;
+      remaining -= values[i].arabic;
+    }
+    i++;
+  }
+  
+  return roman;
+};
+
 function sortTranslation() {
   var values = Object.getOwnPropertyNames(arabicToRoman).sort((a, b) => {
     return Number.parseInt(b) - Number.parseInt(a);
@@ -41,22 +58,5 @@ function notFinished(remaining) {
 function fitsIn(remaining, valueTuple) {
   return remaining >= valueTuple.arabic;
 }
-
-var converter = function (arabic) {
-  var values = sortTranslation();
-  
-  var roman = '';
-  var remaining = arabic;
-  var i = 0;
-  while (notFinished(remaining)) {
-    while (fitsIn(remaining, values[i])) {
-      roman += values[i].roman;
-      remaining -= values[i].arabic;
-    }
-    i++;
-  }
-  
-  return roman;
-};
 
 module.exports = converter;
