@@ -3,7 +3,21 @@
 var arabicToRoman = {
   5: 'V',
   1: 'I',
-  10: 'X'
+  4: 'IV',
+  
+  10: 'X',
+  9: 'IX',
+  
+  40: 'XL',
+  50: 'L',
+  90: 'XC',
+  
+  100: 'C',
+  400: 'CD',
+  500: 'D',
+  
+  900: 'CM',
+  1000: 'M',
 };
 
 function sortTranslation() {
