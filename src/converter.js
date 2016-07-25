@@ -6,8 +6,7 @@ var arabicToRoman = {
   10: 'X'
 };
 
-var converter = function (arabic) {
-  var remaining = arabic;
+function sortTranslation() {
   var values = Object.getOwnPropertyNames(arabicToRoman).sort((a, b) => {
     return Number.parseInt(b) - Number.parseInt(a);
   });
@@ -18,8 +17,13 @@ var converter = function (arabic) {
   });
   
   values = vals;
+  return values;
+}
+var converter = function (arabic) {
+  var values = sortTranslation();
   
   var roman = '';
+  var remaining = arabic;
   var i = 0;
   while (remaining > 0) {
     while (remaining  >= values[i].arabic) {
