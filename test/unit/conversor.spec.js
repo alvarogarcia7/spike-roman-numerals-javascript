@@ -18,9 +18,10 @@ describe("Conversor", function () {
   });
   
   it("converts to roman", function (done) {
-    var arabic = 'anything';
-    nock('http://localhost').persist().post('/toroman').reply(200, {'roman': 'I'});
+    var arabic = '1';
+    nock('http://localhost').persist().post('/toroman', {'arabic': '1'}).reply(200, {'roman': 'I'});
     conversor.convertToRoman(arabic)
-      .then((roman) => demand(roman).must.be('I')).then(done);
+      .then((roman) => demand(roman).must.be('I'))
+      .then(done);
   });
 });
