@@ -19,14 +19,20 @@ function sortTranslation() {
   values = vals;
   return values;
 }
+function notFinished(remaining) {
+  return remaining > 0;
+}
+function fitsIn(remaining, valueTuple) {
+  return remaining >= valueTuple.arabic;
+}
 var converter = function (arabic) {
   var values = sortTranslation();
   
   var roman = '';
   var remaining = arabic;
   var i = 0;
-  while (remaining > 0) {
-    while (remaining  >= values[i].arabic) {
+  while (notFinished(remaining)) {
+    while (fitsIn(remaining, values[i])) {
       roman += values[i].roman;
       remaining -= values[i].arabic;
     }
