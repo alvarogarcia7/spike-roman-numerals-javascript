@@ -5,6 +5,7 @@ var app = express();
 var self = this;
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(express.static('src'));
 
 app.post('/toroman', function(req, res) {
   var roman = self.converter(req.body.arabic);

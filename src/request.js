@@ -1,6 +1,7 @@
 "use strict";
 
 var rp = require('request-promise');
+var request = require('request');
 
 module.exports = function () {
   return {
