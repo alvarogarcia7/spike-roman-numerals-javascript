@@ -12,15 +12,15 @@ var send = function(arabic){
         arabic: arabic,
      })
      .then(function(xhr, response) {
-		updateResponse(response.roman);
+        updateResponse(response.roman);
      })
      .catch(function(e, xhr, response) {
-		updateResponse("ERROR");
+        updateResponse("ERROR");
      }); 
 };
 
 var updateResponse = function(text){
-	document.getElementById("roman").value = text;	
+  document.getElementById("roman").value = text;  
 }
 
 function arabicNumberEvent() {
