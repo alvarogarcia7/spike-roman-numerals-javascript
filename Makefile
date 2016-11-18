@@ -1,7 +1,7 @@
 .PHONY: test test-watch
 
 test:
-	mocha --recursive
+	./node_modules/mocha/bin/mocha --recursive
 
 test-watch:
-	mocha --recursive -w
+	./node_modules/mocha/bin/mocha --recursive -w
